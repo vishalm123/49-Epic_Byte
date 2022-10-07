@@ -16,9 +16,14 @@ for i in range(len(y)):
         if nx[j][-1] == y[i][-1]:
             nx[j].append(y[i][2])
             nx[j].append(y[i][3])
+            nx[j].append(y[i][4])
 for i in nx.copy():
     if(len(i)<3):
         nx.remove(i)
 for i in range(len(nx)):
     temp = nx[i]
-    nx[i] = {"name":temp[0],"pid":temp[1],"local address":temp[2],"foreign address":temp[3]}
+    nx[i] = {"name":temp[0],"pid":temp[1],"local address":temp[2],"foreign address":temp[3],"STATE":temp[4]}
+open_ports = [i for i in nx if i["STATE"]=="LISTENING" or i["STATE"]=="ESTABLISHED"]
+for i in open_ports.copy():
+    if re.match('0.0.0.0',i["local address"]) or re.match('127.0.0.1',i["local address"]):
+        open_ports.remove(i)
