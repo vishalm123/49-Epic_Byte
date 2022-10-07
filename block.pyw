@@ -1,9 +1,9 @@
 import time
 import datetime as dt
 
-end_time = dt.datetime(2022,10,8)
+end_time = dt.datetime(2022,10,9)
 
-site_block = ["www.aaa.com"]
+site_block = [str(input("Enter website link "))]
 
 host_path = "C:/Windows/System32/drivers/etc/hosts"
 
