@@ -27,3 +27,4 @@ open_ports = [i for i in nx if i["STATE"]=="LISTENING" or i["STATE"]=="ESTABLISH
 for i in open_ports.copy():
     if re.match('0.0.0.0',i["local address"]) or re.match('127.0.0.1',i["local address"]):
         open_ports.remove(i)
+#nmapcheck
