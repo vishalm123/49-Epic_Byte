@@ -19,3 +19,6 @@ for i in range(len(y)):
 for i in nx.copy():
     if(len(i)<3):
         nx.remove(i)
+for i in range(len(nx)):
+    temp = nx[i]
+    nx[i] = {"name":temp[0],"pid":temp[1],"local address":temp[2],"foreign address":temp[3]}
