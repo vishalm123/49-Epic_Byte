@@ -12,7 +12,7 @@ with open("output.txt", "r") as file:
 for i in k.copy():
     if "unknown" in i:
         k.remove(i)
-k = [re.split(r'\s{2,}',i.strip()) for i in k[5:-2]]
+k = [re.split(r'\s{1,}',i.strip()) for i in k[5:-2]]
 open_ports = []
 for i in range(len(k)):
     temp = k[i]
